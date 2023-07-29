@@ -1,9 +1,9 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const authRouter = require('./routes/auth');
-const { configDotenv } = require('dotenv');
-
+require('dotenv').config()
+const express = require('express')
+const mongoose = require('mongoose')
+const { configDotenv } = require('dotenv')
+const authRouter = require('./routes/auth')
+const postRouter = require('./routes/post')
 const connectDB = async () => {
   try {
     await mongoose.connect(
@@ -14,21 +14,23 @@ const connectDB = async () => {
         useUnifiedTopology: true,
         useFindAndModify: false,
       }
-    );
-    console.log('Mongoodb connected');
+    )
+    console.log('Mongoodb connected')
   } catch (error) {
-    console.log(error.message);
-    process.exit(1);
+    console.log(error.message)
+    process.exit(1)
   }
-};
+}
 
-connectDB();
-const app = express();
+connectDB()
+const app = express()
+//để đọc bất cứ dữ liệu req gửi lên
+app.use(express.json())
+app.use('/api/auth', authRouter)
+app.use('/api/post', postRouter)
 
-app.use(express.json()); //để đọc bất cứ dữ liệu req gửi lên
-app.use('/api/auth', authRouter);
-const PORT = 5000;
+const PORT = 5000
 
 app.listen(PORT, () => {
-  console.log(`Server start on PORT: ${PORT}`);
-});
+  console.log(`Server start on PORT: ${PORT}`)
+})

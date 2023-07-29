@@ -15,3 +15,14 @@ Content-Type: application/json
         "username":"kimthixoan",
         "password":"camapxoan98"
 }
+###
+POST  http://localhost:5000/api/post/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiNjdjYzA4MWQ2YzJmYWY4OTBmZDkiLCJpYXQiOjE2OTA2MjE0NjB9.6CznVFf5kjFrdFn0RPeRKbLslokb6kFJaoA5R90_iEM
+
+{
+        "title":"Mearn stack",
+        "description":"The programing skill mearn stack using js",
+        "url":"Mearnreact.com",
+        "status":"LEARNING"
+}
