@@ -110,4 +110,26 @@ router.put('/:id', verifyToken, async (req, res) => {
     res.status(500).json({ success: false, message: 'Interal server error' })
   }
 })
+
+/**
+ * @router @DELETE api/post
+ * @desc delete post
+ * @access Private
+ */
+router.delete('/:id', verifyToken, async (req, res) => {
+  /**
+   * vì viết vào db nên phải dùng async
+   */
+  try {
+    const postDeleteCondition = { _id: req.params.id, user: req.userId }
+    const deletePost = await Post.findByIdAndDelete(postDeleteCondition)
+    /**kiem tra neu deletePost khong co */
+    if (!deletePost)
+      return res.status(400).json({ success: false, message: 'not availible' })
+    res.json({ success: true, post: deletePost })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ success: false, message: 'Interal server error' })
+  }
+})
 module.exports = router
