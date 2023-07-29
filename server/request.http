@@ -26,3 +26,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiN
         "url":"Mearnreact.com",
         "status":"LEARNING"
 }
+###
+GET http://localhost:5000/api/post
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiNjdjYzA4MWQ2YzJmYWY4OTBmZDkiLCJpYXQiOjE2OTA2MjM3NDV9.9y_kcSdrKJGaDPMiNDBJbiMWCfv9Q0i96bHA_iJI4i4
