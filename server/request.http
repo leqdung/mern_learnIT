@@ -30,3 +30,50 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiN
 GET http://localhost:5000/api/post
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiNjdjYzA4MWQ2YzJmYWY4OTBmZDkiLCJpYXQiOjE2OTA2MjM3NDV9.9y_kcSdrKJGaDPMiNDBJbiMWCfv9Q0i96bHA_iJI4i4
+###
+POST Http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+        "username":"Zaidaunhaynguyen",
+        "password":"lequangdung"
+}
+
+#tao post moi
+###
+GET  http://localhost:5000/api/post/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiNjdjYzA4MWQ2YzJmYWY4OTBmZDkiLCJpYXQiOjE2OTA2MzQwODh9.aSTuI4ubWFHN9-h4a6T5qUg4eOg91lq5lYu71VwIq-E
+
+{
+        "title":"sale skill",
+        "description":"This is sale skill, working with custommer",
+        "url":"saleCamapxoan.com",
+        "status":"TO LEARNING"
+}
+
+#login
+###
+POST Http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+        "username":"Zaidaunhaynguyen",
+        "password":"lequangdung"
+}
+###
+GET http://localhost:5000/api/post
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiNjdjYzA4MWQ2YzJmYWY4OTBmZDkiLCJpYXQiOjE2OTA2Mzk3NDJ9.JIxbnb0rxkxqxsfdVNaJB3VytIksZ-IDSIWU0TZ_P1g
+
+###
+PUT http://localhost:5000/api/post/64c3ef0a88658618facf2b0f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGJiNjdjYzA4MWQ2YzJmYWY4OTBmZDkiLCJpYXQiOjE2OTA2Mzk3NDJ9.JIxbnb0rxkxqxsfdVNaJB3VytIksZ-IDSIWU0TZ_P1g
+
+{
+        "title": "my fist post edited",
+        "description":"content edited by user",
+        "url":"vnexpress.com",
+        "status":""
+}
