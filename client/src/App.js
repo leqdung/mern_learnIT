@@ -1,8 +1,17 @@
-import logo from './logo.svg'
 import './App.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Landing from './components/layout/Landing'
+import Login from './components/auth/Login'
 
 function App() {
-  return <div className='App'>Hello world</div>
+  return (
+    <Router>
+      <Switch>
+        <Route extract path='/' component={Landing} />
+        <Route extract path='/login' component={Login} />
+      </Switch>
+    </Router>
+  )
 }
 
 export default App
